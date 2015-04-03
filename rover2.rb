@@ -1,8 +1,9 @@
 class Plateau
-#attr_accessor :width, :heigth
-#@width=width
-#@heigth=heigth
-
+attr_accessor :width, :heigth
+	def initialize(width, height)
+	@width=width
+	@heigth=heigth
+	end
 
 #def plateau_size(heigth, width)
 #if heigth [1..9] then puts ""
@@ -19,16 +20,9 @@ attr_accessor :x, :y, :direction
 		@direction = direction
 	end
 
-	#def x=(x)
-	#	@x = x
-	#end	
-	#def y=(y)
-	#	@y=y
-	#end
-	#def y = 
-
+	
 	def instruction(user_input)
-		command = user_input.split
+		command = user_input.split (//)
 		command.each do |x| 
 			if x == "M"
 					move
@@ -39,12 +33,6 @@ attr_accessor :x, :y, :direction
 			end
 				end
 	end
-	
-	#def turn(left,right)
-	#turn = gets.chomp
-	#end
-
-
 
 	# define method for change in direction to the left 
 	def left
@@ -97,12 +85,12 @@ attr_accessor :x, :y, :direction
 	
 end
 
-#plateau=Plateau.new(5,5)
+plateau=Plateau.new(5,5)
 rover1=Rover.new(1,2,"N")
-puts rover1
+
 rover1.instruction("LMLMLMLMM")
 puts rover1
 rover2=Rover.new(3,3,"E")
-puts rover2
+
 rover2.instruction("MMRMMRMRRM")
 puts rover2
